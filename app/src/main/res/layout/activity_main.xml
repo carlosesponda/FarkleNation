@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:background="#000000"
+tools:context="com.example.espon.farklenation.MainActivity">
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:src="@drawable/farkle_nation_logo"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginBottom="90dp"
+    android:adjustViewBounds="true"
+    android:scaleType="fitXY"/>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Get Coached"
+    android:textSize="30sp"
+    android:id="@+id/run_button"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="350dp"
+    android:layout_centerHorizontal="true"
+     />
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tutorial"
+    android:id="@+id/tutorial_button"
+    android:layout_below="@+id/run_button"
+    android:textSize="30sp"
+    android:layout_marginTop="20dp"
+    android:layout_centerHorizontal="true" />
+<!--
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Settings"
+    android:id="@+id/settings_button"
+    android:layout_below="@+id/tutorial_button"
+    android:layout_centerHorizontal="true"
+    android:textSize="30sp"
+    android:layout_marginTop="5dp" />-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rules"
+        android:id="@+id/rules_button"
+        android:layout_below="@+id/tutorial_button"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp" />
+</RelativeLayout>
+
+
+
+
