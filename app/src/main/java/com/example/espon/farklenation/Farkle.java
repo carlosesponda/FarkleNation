@@ -9,6 +9,7 @@ import java.util.PriorityQueue;
  * Created by espon on 10/2/2016.
  */
 public class Farkle {
+    static final String RECOMMEND_STR = "We recommend that you take ";
     static int winTotal = 10000;
     static int bankTotal = 500;
 
@@ -733,370 +734,370 @@ public class Farkle {
         if(expectedValues.isEmpty()){
             return "Sorry but you Farkled";
         }
+        double exp_val = expectedValues.peek().expectedValue;
         switch (expectedValues.peek().move)
         {
             case "OneOneInput" :
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])){
-                    return "We recommend that you take one of the dice that are currently a 1 and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])){
+                    return RECOMMEND_STR + "one of the dice that are currently a 1 and bank that total!";
                 }
-                return "We recommend that you take one of the dice that are currently a 1 and reroll.";
+                return RECOMMEND_STR + "one of the dice that are currently a 1 and reroll.";
             case "OneFiveInput" :
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])){
-                    return "We recommend that you take one of the dice that are currently a 5 and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])){
+                    return RECOMMEND_STR + "one of the dice that are currently a 5 and bank that total!";
                 }
-                return "We recommend that you take one of the dice that are currently a 5 and reroll.";
+                return RECOMMEND_STR + "one of the dice that are currently a 5 and reroll.";
             case "OneOneOneFiveInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[3])){
-                    return "We recommend that you take a 1 and a 5 die and bank that total!";
-                }
-                return "We recommend that you take a 1 and a 5 die and reroll.";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[3])){
+                    return RECOMMEND_STR + "a 1 and a 5 die and bank that total!";
+                }Integer
+                return RECOMMEND_STR + "a 1 and a 5 die and reroll.";
             case "TwoFivesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])){
-                    return "We recommend that you take two of the 1 dice and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])){
+                    return RECOMMEND_STR + "two of the 1 dice and bank that total!";
                 }
-                return "We recommend that you take two of the 1 dice and reroll.";
+                return RECOMMEND_STR + "two of the 1 dice and reroll.";
             case "TwoOnesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])){
-                    return "We recommend that you take two 1s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])){
+                    return RECOMMEND_STR + "two 1s and bank that total!";
                 }
-                return "We recommend that you take two 1s and reroll.";
+                return RECOMMEND_STR + "two 1s and reroll.";
             case "ThreeOnesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[5])){
-                    return "We recommend that you take the three 1s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[5])){
+                    return RECOMMEND_STR + "the three 1s and bank that total!";
                 }
-                return "We recommend that you take the three 1s and reroll.";
+                return RECOMMEND_STR + "the three 1s and reroll.";
             case "ThreeTwosInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[6])){
-                    return "We recommend that you take the three 2s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[6])){
+                    return RECOMMEND_STR + "the three 2s and bank that total!";
                 }
-                return "We recommend that you take the three 2s and reroll.";
+                return RECOMMEND_STR + "the three 2s and reroll.";
             case "ThreeThreesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[7])){
-                    return "We recommend that you take the three 3s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[7])){
+                    return RECOMMEND_STR + "the three 3s and bank that total!";
                 }
-                return "We recommend that you take the three 3s and reroll.";
+                return RECOMMEND_STR + "the three 3s and reroll.";
             case "ThreeFoursInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[8])){
-                    return "We recommend that you take the three 4s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[8])){
+                    return RECOMMEND_STR + "the three 4s and bank that total!";
                 }
-                return "We recommend that you take the three 4s and reroll.";
+                return RECOMMEND_STR + "the three 4s and reroll.";
             case "ThreeFivesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[9])){
-                    return "We recommend that you take the three 5s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[9])){
+                    return RECOMMEND_STR + "the three 5s and bank that total!";
                 }
-                return "We recommend that you take the three 5s and reroll.";
+                return RECOMMEND_STR + "the three 5s and reroll.";
             case "ThreeSixsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[10])){
-                    return "We recommend that you take the three 6s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[10])){
+                    return RECOMMEND_STR + "the three 6s and bank that total!";
                 }
-                return "We recommend that you take the three 6s and reroll.";
+                return RECOMMEND_STR + "the three 6s and reroll.";
             case "OneOneTwoFivesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])){
-                    return "We recommend that you take the one 1 and Two 5s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])){
+                    return RECOMMEND_STR + "the one 1 and Two 5s and bank that total!";
                 }
-                return "We recommend that you take the three 1s and reroll.";
+                return RECOMMEND_STR + "the three 1s and reroll.";
             case "OneFiveTwoOnesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[3]+Integer.parseInt(pointSettings[3]))){
-                    return "We recommend that you take the one 5 and Two 1s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[3]+Integer.parseInt(pointSettings[3]))){
+                    return RECOMMEND_STR + "the one 5 and Two 1s and bank that total!";
                 }
-                return "We recommend that you take the one 5 and Two 1s  and reroll.";
+                return RECOMMEND_STR + "the one 5 and Two 1s  and reroll.";
             case "FourInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[11])){
-                    return "We recommend that you take the Four of a kind and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[11])){
+                    return RECOMMEND_STR + "the Four of a kind and bank that total!";
                 }
-                return "We recommend that you take the Four of a kind and reroll.";
+                return RECOMMEND_STR + "the Four of a kind and reroll.";
 
             case "TwoOnesTwoFivesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])){
-                    return "We recommend that you take the Two 1s and Two 5s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])){
+                    return RECOMMEND_STR + "the Two 1s and Two 5s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s and Two 5s and reroll.";
+                return RECOMMEND_STR + "the Two 1s and Two 5s and reroll.";
 
             case "OneOneThreeTwosInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[6])){
-                    return "We recommend that you take the one 1 and Three 2s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[6])){
+                    return RECOMMEND_STR + "the one 1 and Three 2s and bank that total!";
                 }
-                return "We recommend that you take the one 1 and Three 2s  and reroll.";
+                return RECOMMEND_STR + "the one 1 and Three 2s  and reroll.";
 
             case "OneOneThreeThreesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[7])){
-                    return "We recommend that you take the one 1 and Three 3s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[7])){
+                    return RECOMMEND_STR + "the one 1 and Three 3s and bank that total!";
                 }
-                return "We recommend that you take the one 1 and Three 3s  and reroll.";
+                return RECOMMEND_STR + "the one 1 and Three 3s  and reroll.";
 
             case "OneOneThreeFoursInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[8])){
-                    return "We recommend that you take the one 1 and Three 4s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[8])){
+                    return RECOMMEND_STR + "the one 1 and Three 4s and bank that total!";
                 }
-                return "We recommend that you take the one 1 and Three 4s  and reroll.";
+                return RECOMMEND_STR + "the one 1 and Three 4s  and reroll.";
 
             case "OneOneThreeFivesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[9])){
-                    return "We recommend that you take the one 1 and Three 5s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[9])){
+                    return RECOMMEND_STR + "the one 1 and Three 5s and bank that total!";
                 }
-                return "We recommend that you take the one 1 and Three 5s and reroll.";
+                return RECOMMEND_STR + "the one 1 and Three 5s and reroll.";
 
             case "OneOneThreeSixsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[10])){
-                    return "We recommend that you take the one 1 and Three 6s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[10])){
+                    return RECOMMEND_STR + "the one 1 and Three 6s and bank that total!";
                 }
-                return "We recommend that you take the one 1 and Three 6s and reroll.";
+                return RECOMMEND_STR + "the one 1 and Three 6s and reroll.";
 
             case "OneFiveThreeOnesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[5])){
-                    return "We recommend that you take the one 5 and Three 1s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[5])){
+                    return RECOMMEND_STR + "the one 5 and Three 1s and bank that total!";
                 }
-                return "We recommend that you take the one 5 and Three 1s and reroll.";
+                return RECOMMEND_STR + "the one 5 and Three 1s and reroll.";
 
             case "OneFiveThreeTwosInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[6])){
-                    return "We recommend that you take the one 5 and Three 2s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[6])){
+                    return RECOMMEND_STR + "the one 5 and Three 2s and bank that total!";
                 }
-                return "We recommend that you take the one 5 and Three 2s and reroll.";
+                return RECOMMEND_STR + "the one 5 and Three 2s and reroll.";
 
             case "OneFiveThreeThreesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
-                    return "We recommend that you take the one 5 and Three 3s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
+                    return RECOMMEND_STR + "the one 5 and Three 3s and bank that total!";
                 }
-                return "We recommend that you take the one 5 and Three 3s and reroll.";
+                return RECOMMEND_STR + "the one 5 and Three 3s and reroll.";
 
             case "OneFiveThreeFoursInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
-                    return "We recommend that you take the one 5 and Three 4s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
+                    return RECOMMEND_STR + "the one 5 and Three 4s and bank that total!";
                 }
-                return "We recommend that you take the one 5 and Three 4s and reroll.";
+                return RECOMMEND_STR + "the one 5 and Three 4s and reroll.";
 
             case "OneFiveThreeSixsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
-                    return "We recommend that you take the one 5 and Three 6s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
+                    return RECOMMEND_STR + "the one 5 and Three 6s and bank that total!";
                 }
-                return "We recommend that you take the one 5 and Three 6s and reroll.";
+                return RECOMMEND_STR + "the one 5 and Three 6s and reroll.";
 
 
             case "FiveInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[12])){
-                    return "We recommend that you take the five of a kind and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[12])){
+                    return RECOMMEND_STR + "the five of a kind and bank that total!";
                 }
-                return "We recommend that you take the five of a kind and reroll.";
+                return RECOMMEND_STR + "the five of a kind and reroll.";
 
             case "FourPlusFiveInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[4])){
-                    return "We recommend that you take the four of a kind and One 5 and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[4])){
+                    return RECOMMEND_STR + "the four of a kind and One 5 and bank that total!";
                 }
-                return "We recommend that you take the four of a kind and One 5 and reroll.";
+                return RECOMMEND_STR + "the four of a kind and One 5 and reroll.";
 
             case "FourPlusOneInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[3])){
-                    return "We recommend that you take the four of a kind and One 1 and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[3])){
+                    return RECOMMEND_STR + "the four of a kind and One 1 and bank that total!";
                 }
-                return "We recommend that you take the four of a kind and One 1 and reroll.";
+                return RECOMMEND_STR + "the four of a kind and One 1 and reroll.";
 
             case "OneOneOneFiveThreeTwosInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[6])){
-                    return "We recommend that you take the One 1,One 5, Three 2s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[6])){
+                    return RECOMMEND_STR + "the One 1,One 5, Three 2s and bank that total!";
                 }
-                return "We recommend that you take the One 1,One 5, Three 2s and reroll.";
+                return RECOMMEND_STR + "the One 1,One 5, Three 2s and reroll.";
 
             case "OneOneOneFiveThreeThreesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
-                    return "We recommend that you take the One 1,One 5, Three 3s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
+                    return RECOMMEND_STR + "the One 1,One 5, Three 3s and bank that total!";
                 }
-                return "We recommend that you take the One 1,One 5, Three 3s and reroll.";
+                return RECOMMEND_STR + "the One 1,One 5, Three 3s and reroll.";
 
             case "OneOneOneFiveThreeFoursInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
-                    return "We recommend that you take the One 1,One 5, Three 4s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
+                    return RECOMMEND_STR + "the One 1,One 5, Three 4s and bank that total!";
                 }
-                return "We recommend that you take the One 1,One 5, Three 4s and reroll.";
+                return RECOMMEND_STR + "the One 1,One 5, Three 4s and reroll.";
 
             case "OneOneOneFiveThreeSixsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
-                    return "We recommend that you take the One 1,One 5, Three 6s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
+                    return RECOMMEND_STR + "the One 1,One 5, Three 6s and bank that total!";
                 }
-                return "We recommend that you take the One 1,One 5, Three 6s and reroll.";
+                return RECOMMEND_STR + "the One 1,One 5, Three 6s and reroll.";
 
             case "TwoOnesThreeTwosInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[6])){
-                    return "We recommend that you take the Two 1s and Three 2s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[6])){
+                    return RECOMMEND_STR + "the Two 1s and Three 2s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s and Three 2s and reroll.";
+                return RECOMMEND_STR + "the Two 1s and Three 2s and reroll.";
 
             case "TwoOnesThreeThreesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[7])){
-                    return "We recommend that you take the Two 1s and Three 3s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[7])){
+                    return RECOMMEND_STR + "the Two 1s and Three 3s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s and Three 3s and reroll.";
+                return RECOMMEND_STR + "the Two 1s and Three 3s and reroll.";
 
             case "TwoOnesThreeFoursInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[8])){
-                    return "We recommend that you take the Two 1s and Three 4s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[8])){
+                    return RECOMMEND_STR + "the Two 1s and Three 4s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s and Three 4s and reroll.";
+                return RECOMMEND_STR + "the Two 1s and Three 4s and reroll.";
 
             case "TwoOnesThreeFivesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[9])){
-                    return "We recommend that you take the Two 1s and Three 5s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[9])){
+                    return RECOMMEND_STR + "the Two 1s and Three 5s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s and Three 5s and reroll.";
+                return RECOMMEND_STR + "the Two 1s and Three 5s and reroll.";
 
             case "TwoOnesThreeSixsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[10])){
-                    return "We recommend that you take the Two 1s and Three 6s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[10])){
+                    return RECOMMEND_STR + "the Two 1s and Three 6s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s and Three 6s and reroll.";
+                return RECOMMEND_STR + "the Two 1s and Three 6s and reroll.";
 
             case "TwoFivesThreeOnesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[5])){
-                    return "We recommend that you take the Two 5s and Three 1s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[5])){
+                    return RECOMMEND_STR + "the Two 5s and Three 1s and bank that total!";
                 }
-                return "We recommend that you take the Two 5s and Three 1s and reroll.";
+                return RECOMMEND_STR + "the Two 5s and Three 1s and reroll.";
 
             case "TwoFivesThreeTwosInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[6])){
-                    return "We recommend that you take the Two 5s and Three 2s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[6])){
+                    return RECOMMEND_STR + "the Two 5s and Three 2s and bank that total!";
                 }
-                return "We recommend that you take the Two 5s and Three 2s and reroll.";
+                return RECOMMEND_STR + "the Two 5s and Three 2s and reroll.";
 
             case "TwoFivesThreeThreesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
-                    return "We recommend that you take the Two 5s and Three 3s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
+                    return RECOMMEND_STR + "the Two 5s and Three 3s and bank that total!";
                 }
-                return "We recommend that you take the Two 5s and Three 3s and reroll.";
+                return RECOMMEND_STR + "the Two 5s and Three 3s and reroll.";
 
             case "TwoFivesThreeFoursInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
-                    return "We recommend that you take the Two 5s and Three 4s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
+                    return RECOMMEND_STR + "the Two 5s and Three 4s and bank that total!";
                 }
-                return "We recommend that you take the Two 5s and Three 4s and reroll.";
+                return RECOMMEND_STR + "the Two 5s and Three 4s and reroll.";
 
             case "TwoFivesThreeSixsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
-                    return "We recommend that you take the Two 5s and Three 6s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
+                    return RECOMMEND_STR + "the Two 5s and Three 6s and bank that total!";
                 }
-                return "We recommend that you take the Two 5s and Three 6s and reroll.";
+                return RECOMMEND_STR + "the Two 5s and Three 6s and reroll.";
 
             case "TwoOnesOneFiveThreeTwosInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[6])){
-                    return "We recommend that you take the Two 1s, One 5, and Three 2s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[6])){
+                    return RECOMMEND_STR + "the Two 1s, One 5, and Three 2s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s,One 5, and Three 2s and reroll.";
+                return RECOMMEND_STR + "the Two 1s,One 5, and Three 2s and reroll.";
 
             case "TwoOnesOneFiveThreeThreesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
-                    return "We recommend that you take the Two 1s,One 5, and Three 3s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
+                    return RECOMMEND_STR + "the Two 1s,One 5, and Three 3s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s,One 5, and Three 3s and reroll.";
+                return RECOMMEND_STR + "the Two 1s,One 5, and Three 3s and reroll.";
 
             case "TwoOnesOneFiveThreeFoursInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
-                    return "We recommend that you take the Two 1s,One 5, and Three 4s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
+                    return RECOMMEND_STR + "the Two 1s,One 5, and Three 4s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s,One 5, and Three 4s and reroll.";
+                return RECOMMEND_STR + "the Two 1s,One 5, and Three 4s and reroll.";
 
             case "TwoOnesOneFiveThreeSixsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
-                    return "We recommend that you take the Two 1s,One 5, and Three 6s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
+                    return RECOMMEND_STR + "the Two 1s,One 5, and Three 6s and bank that total!";
                 }
-                return "We recommend that you take the Two 1s,One 5, and Three 6s and reroll.";
+                return RECOMMEND_STR + "the Two 1s,One 5, and Three 6s and reroll.";
 
             case "OneOneTwoFivesThreeTwosInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[6])){
-                    return "We recommend that you take the One 1,Two 5s, and Three 2s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[6])){
+                    return RECOMMEND_STR + "the One 1,Two 5s, and Three 2s and bank that total!";
                 }
-                return "We recommend that you take the One 1,Two 5s, and Three 2s and reroll.";
+                return RECOMMEND_STR + "the One 1,Two 5s, and Three 2s and reroll.";
 
             case "OneOneTwoFivesThreeThreesInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
-                    return "We recommend that you take the One 1,Two 5s, and Three 3s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[7])){
+                    return RECOMMEND_STR + "the One 1,Two 5s, and Three 3s and bank that total!";
                 }
-                return "We recommend that you take the One 1,Two 5s, and Three 3s and reroll.";
+                return RECOMMEND_STR + "the One 1,Two 5s, and Three 3s and reroll.";
 
             case "OneOneTwoFivesThreeFoursInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
-                    return "We recommend that you take the One 1,Two 5s, and Three 4s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[8])){
+                    return RECOMMEND_STR + "the One 1,Two 5s, and Three 4s and bank that total!";
                 }
-                return "We recommend that you take the One 1,Two 5s, and Three 4s and reroll.";
+                return RECOMMEND_STR + "the One 1,Two 5s, and Three 4s and reroll.";
 
             case "OneOneTwoFivesThreeSixsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
-                    return "We recommend that you take the One 1,Two 5s, and Three 6s and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[10])){
+                    return RECOMMEND_STR + "the One 1,Two 5s, and Three 6s and bank that total!";
                 }
-                return "We recommend that you take the One 1,Two 5s, and Three 6s and reroll.";
+                return RECOMMEND_STR + "the One 1,Two 5s, and Three 6s and reroll.";
 
             case "SixInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[13])){
-                    return "We recommend that you take the Six of a Kind and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[13])){
+                    return RECOMMEND_STR + "the Six of a Kind and bank that total!";
                 }
-                return "We recommend that you take the Six of a Kind and reroll.";
+                return RECOMMEND_STR + "the Six of a Kind and reroll.";
 
             case "StraightInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[16])){
-                    return "We recommend that you take the Straight and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[16])){
+                    return RECOMMEND_STR + "the Straight and bank that total!";
                 }
-                return "We recommend that you take the Straight and reroll.";
+                return RECOMMEND_STR + "the Straight and reroll.";
 
             case "TripletsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[15])){
-                    return "We recommend that you take the Triplets and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[15])){
+                    return RECOMMEND_STR + "the Triplets and bank that total!";
                 }
-                return "We recommend that you take the Triplets and reroll.";
+                return RECOMMEND_STR + "the Triplets and reroll.";
 
             case "PairsInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[14])){
-                    return "We recommend that you take the 3 Pairs and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[14])){
+                    return RECOMMEND_STR + "the 3 Pairs and bank that total!";
                 }
-                return "We recommend that you take the 3 Pairs and reroll.";
+                return RECOMMEND_STR + "the 3 Pairs and reroll.";
 
             case "FiveplusOneOneInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[12])+Integer.parseInt(pointSettings[3])){
-                    return "We recommend that you take the Five of a Kind,One 1, and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[12])+Integer.parseInt(pointSettings[3])){
+                    return RECOMMEND_STR + "the Five of a Kind,One 1, and bank that total!";
                 }
-                return "We recommend that you take the Five of a Kind,One 1, and reroll.";
+                return RECOMMEND_STR + "the Five of a Kind,One 1, and reroll.";
 
             case "FiveplusOneFiveInput":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[12])+Integer.parseInt(pointSettings[4])){
-                    return "We recommend that you take the Five of a Kind,One 5, and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[12])+Integer.parseInt(pointSettings[4])){
+                    return RECOMMEND_STR + "the Five of a Kind,One 5, and bank that total!";
                 }
-                return "We recommend that you take the Five of a Kind,One 5, and reroll.";
+                return RECOMMEND_STR + "the Five of a Kind,One 5, and reroll.";
 
             case "FourplusOneOneOneFive":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])){
-                    return "We recommend that you take the Four of a Kind,One 1, and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[4])){
+                    return RECOMMEND_STR + "the Four of a Kind,One 1, and bank that total!";
                 }
-                return "We recommend that you take the Four of a Kind,One 1, and reroll.";
+                return RECOMMEND_STR + "the Four of a Kind,One 1, and reroll.";
 
             case "FourplusTwoOnes":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])){
-                    return "We recommend that you take the Four of a Kind,Two 1s, and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[3])+Integer.parseInt(pointSettings[3])){
+                    return RECOMMEND_STR + "the Four of a Kind,Two 1s, and bank that total!";
                 }
-                return "We recommend that you take the Four of a Kind,Two 1s, and reroll.";
+                return RECOMMEND_STR + "the Four of a Kind,Two 1s, and reroll.";
 
             case "FourplusTwoFives":
-                if(expectedValues.peek().expectedValue==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])){
-                    return "We recommend that you take the Four of a Kind,Two 5s, and bank that total!";
+                if(exp_val==currTotalInt+Integer.parseInt(pointSettings[11])+Integer.parseInt(pointSettings[4])+Integer.parseInt(pointSettings[4])){
+                    return RECOMMEND_STR + "the Four of a Kind,Two 5s, and bank that total!";
                 }
-                return "We recommend that you take the Four of a Kind,Two 5s, and reroll.";
+                return RECOMMEND_STR + "the Four of a Kind,Two 5s, and reroll.";
 
             default:
                 return "Error";
 
         }
     }
+
     public static void setExpectedValues(){
-    for(int i = 0; i<storedValues.length; i++){
-        for(int j = 0; j<storedValues[i].length; j++){
-            storedValues[i][j] = -1;
+        for(int i = 0; i<storedValues.length; i++){
+            for(int j = 0; j<storedValues[i].length; j++){
+                storedValues[i][j] = -1;
+            }
+        }
+        for(int i = 9950; i>=0; i-=minPointIncrement){
+            System.out.print(i + "   ");
+            for(int j = 1; j<=6; j++){
+                storedValues[i/minPointIncrement][j-1] = ExpectedValue(i,j);
+            }
         }
     }
-    for(int i = 9950; i>=0; i-=minPointIncrement){
-        System.out.print(i + "   ");
-        for(int j = 1; j<=6; j++){
-            storedValues[i/minPointIncrement][j-1] = ExpectedValue(i,j);
-        }
-
-    }
-
-}
 
     public static double ExpectedValue(double currPoint, int diceLeft) {
         if (currPoint >= winTotal) {
@@ -1109,7 +1110,7 @@ public class Farkle {
         /*if(diceLeft == 0){
             return currPoint+bonusRoll;
         }*/
-        double s = S(currPoint, diceLeft);
+        double s = getStrategy(currPoint, diceLeft);
         if (currPoint < bankTotal || s > 0) {
             return currPoint + s;
         } else {
@@ -1117,7 +1118,7 @@ public class Farkle {
         }
     }
 
-    public static double S(double currPoint, int diceLeft) {
+    public static double getStrategy(double currPoint, int diceLeft) {
         if (currPoint > winTotal) {
             return -1;
         }
@@ -1158,7 +1159,7 @@ public class Farkle {
         }
         return total-currPoint;
     }
-/*
+    /*
     public static void getTable(String[] nameSettings, String[] pointSettings) {
         winTotal = Integer.parseInt(pointSettings[0]) - startTotal;
         if(startTotal != 0){
@@ -1184,64 +1185,6 @@ public class Farkle {
         }
     }
 
-    public static double ExpectedValue(double currPoint, int diceLeft) {
-        //if you have won stop
-        if (currPoint >= winTotal) {
-            return currPoint;
-        }
-        int pointIndex = ((int) currPoint) / 50;
-        if (storedValues[pointIndex][diceLeft - 1] != -1) {
-            return storedValues[pointIndex][diceLeft - 1];
-        }
-        double s = S(currPoint, diceLeft);
-        if (currPoint < bankTotal || s > 0) {
-            return currPoint + s;
-        } else {
-            return currPoint;
-        }
-    }
-
-    public static double S(double currPoint, int diceLeft) {
-        if (currPoint > winTotal) {
-            return -1;
-        }
-        double total = 0;
-        switch (diceLeft) {
-            case 1:
-                for (int i = 0; i < caseOne[0].length; i++) {
-                    total += caseOne[0][i] * ExpectedValue(currPoint + caseOne[1][i], caseOne[2][i]) / dividedNums[0];
-                }
-                break;
-            case 2:
-                for (int i = 0; i < caseTwo[0].length; i++) {
-                    total += caseTwo[0][i] * ExpectedValue(currPoint + caseTwo[1][i], caseTwo[2][i]) / dividedNums[1];
-                }
-                break;
-            case 3:
-                for (int i = 0; i < caseThree[0].length; i++) {
-                    total += caseThree[0][i] * ExpectedValue(currPoint + caseThree[1][i], caseThree[2][i]) / dividedNums[2];
-                }
-                break;
-            case 4:
-                for (int i = 0; i < caseFour[0].length; i++) {
-                    total += caseFour[0][i] * ExpectedValue(currPoint + caseFour[1][i], caseFour[2][i]) / dividedNums[3];
-                }
-                break;
-            case 5:
-                for (int i = 0; i < caseFive[0].length; i++) {
-                    total += caseFive[0][i] * ExpectedValue(currPoint + caseFive[1][i], caseFive[2][i]) / dividedNums[4];
-                }
-                break;
-            case 6:
-                for (int i = 0; i < caseSix[0].length; i++) {
-                    total += caseSix[0][i] * ExpectedValue(currPoint + caseSix[1][i], caseSix[2][i]) / dividedNums[5];
-                }
-                break;
-            default:
-                break;
-        }
-        return total - currPoint;
-    }
     public static void fillCases(String[] nameSettings, String[] pointSettings){
         SortedLinkedList scoringOptionsCase1 = new SortedLinkedList();
         SortedLinkedList scoringOptionsCase2= new SortedLinkedList();
@@ -2381,90 +2324,45 @@ public class Farkle {
             }
         }
 
-    }*/
+    }
+    */
 
-    public static boolean isOneOne(int[] currRoll){
-        if(currRoll[0]>=1){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isTwoOnes(int[] currRoll){
-        if(currRoll[0]>=2){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isOneFive(int[] currRoll){
-        if(currRoll[4]>=1){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isTwoFives(int[] currRoll){
-        if(currRoll[4]>=2){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isThreeOnes(int[] currRoll){
-        if(currRoll[0]>=3){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isThreeTwos(int[] currRoll){
-        if(currRoll[1]>=3){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isThreeThree(int[] currRoll){
-        if(currRoll[2]>=3){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isThreeFours(int[] currRoll){
-        if(currRoll[3]>=3){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isThreeFives(int[] currRoll){
-        if(currRoll[4]>=3){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isThreeSixs(int[] currRoll){
-        if(currRoll[5]>=3){
-            return true;
-        }
-        return false;
-    }
+    public static boolean isOneOne(int[] currRoll){ return currRoll[0]>=1; }
+    public static boolean isTwoOnes(int[] currRoll){ return currRoll[0]>=2; }
+    public static boolean isOneFive(int[] currRoll){ return currRoll[4]>=1; }
+    public static boolean isTwoFives(int[] currRoll){ return currRoll[4]>=2; }
+    public static boolean isThreeOnes(int[] currRoll){ return currRoll[0]>=3; }
+    public static boolean isThreeTwos(int[] currRoll){ return currRoll[1]>=3; }
+    public static boolean isThreeThree(int[] currRoll){ return currRoll[2]>=3; }
+    public static boolean isThreeFours(int[] currRoll){ return currRoll[3]>=3; }
+    public static boolean isThreeFives(int[] currRoll) { return currRoll[4]>=3; }
+    public static boolean isThreeSixs(int[] currRoll){ return currRoll[5]>=3; }
     public static boolean isFour(int[] currRoll){
-        if(currRoll[0]==4||currRoll[1]==4||currRoll[2]==4||currRoll[3]==4||currRoll[4]==4||currRoll[5]==4){
-            return true;
-        }
-        return false;
+         return currRoll[0]==4
+         ||currRoll[1]==4
+         ||currRoll[2]==4
+         ||currRoll[3]==4
+         ||currRoll[4]==4
+         ||currRoll[5]==4;
     }
     public static boolean isFive(int[] currRoll){
-        if(currRoll[0]==5||currRoll[1]==5||currRoll[2]==5||currRoll[3]==5||currRoll[4]==5||currRoll[5]==5){
-            return true;
-        }
-        return false;
+         return currRoll[0]==5
+         ||currRoll[1]==5
+         ||currRoll[2]==5
+         ||currRoll[3]==5
+         ||currRoll[4]==5
+         ||currRoll[5]==5;
     }
     public static boolean isSix(int[] currRoll){
-        if(currRoll[0]==6||currRoll[1]==6||currRoll[2]==6||currRoll[3]==6||currRoll[4]==6||currRoll[5]==6){
-            return true;
-        }
-        return false;
+         return currRoll[0]==6||
+         currRoll[1]==6
+         ||currRoll[2]==6
+         ||currRoll[3]==6
+         ||currRoll[4]==6
+         ||currRoll[5]==6;
     }
     public static boolean isPairs(int[] currRoll){
-        if(isSix(currRoll)){
-            return true;
-        }
+        if(isSix(currRoll)){ return true; }
         if(isFour(currRoll)){
             if(currRoll[0]==2||currRoll[1]==2||currRoll[2]==2||currRoll[3]==2||currRoll[4]==2||currRoll[5]==2){
                 return true;
@@ -2504,10 +2402,12 @@ public class Farkle {
         return false;
     }
     public static boolean isStraight(int[] currRoll){
-        if(currRoll[0]==1&&currRoll[1]==1&&currRoll[2]==1&&currRoll[3]==1&&currRoll[4]==1&&currRoll[5]==1){
-            return true;
-        }
-        return false;
+        return currRoll[0]==1
+        &&currRoll[1]==1
+        &&currRoll[2]==1
+        &&currRoll[3]==1
+        &&currRoll[4]==1
+        &&currRoll[5]==1;
     }
 }
 
