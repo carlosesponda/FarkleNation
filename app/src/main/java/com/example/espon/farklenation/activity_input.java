@@ -14,6 +14,20 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class activity_input extends AppCompatActivity {
+    public final static String[] nameSettings = {
+        "WinTotal", "FirstBankInput", "EachBankInput", "OneOneInput",
+        "OneFiveInput", "ThreeOnesInput", "ThreeTwosInput", "ThreeThreesInput",
+        "ThreeFoursInput", "ThreeFivesInput","ThreeSixsInput", "FourInput", 
+        "FiveInput", "SixInput", "PairsInput", "TripletsInput",
+        "StraightInput"
+    };
+    public final static int[] defaultPointVals = { 
+        10000, 500, 0, 100, 
+        50, 300, 200, 300, 
+        400, 500, 600, 1000, 
+        2000, 3000, 1500, 2500, 
+        1500 
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,21 +67,7 @@ public class activity_input extends AppCompatActivity {
         Button runButton = (Button) findViewById(R.id.button);
         runButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String[] nameSettings = {
-                    "WinTotal", "FirstBankInput", "EachBankInput", "OneOneInput",
-                    "OneFiveInput", "ThreeOnesInput", "ThreeTwosInput", "ThreeThreesInput",
-                    "ThreeFoursInput", "ThreeFivesInput","ThreeSixsInput", "FourInput", 
-                    "FiveInput", "SixInput", "PairsInput", "TripletsInput",
-                    "StraightInput"
-                };
-                int[] defaultPointVals = { 
-                    10000, 500, 0, 100, 
-                    50, 300, 200, 300, 
-                    400, 500, 600, 1000, 
-                    2000, 3000, 1500, 2500, 
-                    1500 
-                };
-
+                
                 int num_settings = nameSettings.length;
 
                 int[] pointSettings = new int[num_settings];

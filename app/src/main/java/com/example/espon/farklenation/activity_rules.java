@@ -18,22 +18,21 @@ public class activity_rules extends AppCompatActivity {
         setContentView(R.layout.activity_rules);
         SharedPreferences sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
-
         TextView FirstBank = (TextView) findViewById(R.id.textView40);
         TextView OneOne = (TextView) findViewById(R.id.textView15);
         TextView OneFive = (TextView) findViewById(R.id.textView16);
         TextView ThreeOnes = (TextView) findViewById(R.id.textView17);
-        TextView ThreeTwos= (TextView) findViewById(R.id.textView18);
-        TextView ThreeThrees= (TextView) findViewById(R.id.textView19);
-        TextView ThreeFours= (TextView) findViewById(R.id.textView20);
-        TextView ThreeFives= (TextView) findViewById(R.id.textView21);
-        TextView ThreeSixs= (TextView) findViewById(R.id.textView22);
-        TextView Four= (TextView) findViewById(R.id.textView23);
-        TextView Five= (TextView) findViewById(R.id.textView24);
-        TextView Six= (TextView) findViewById(R.id.textView25);
-        TextView Straight= (TextView) findViewById(R.id.textView26);
-        TextView Pairs= (TextView)findViewById(R.id.textView27);
-        TextView Triplets= (TextView)findViewById(R.id.textView30);
+        TextView ThreeTwos = (TextView) findViewById(R.id.textView18);
+        TextView ThreeThrees = (TextView) findViewById(R.id.textView19);
+        TextView ThreeFours = (TextView) findViewById(R.id.textView20);
+        TextView ThreeFives = (TextView) findViewById(R.id.textView21);
+        TextView ThreeSixs = (TextView) findViewById(R.id.textView22);
+        TextView Four = (TextView) findViewById(R.id.textView23);
+        TextView Five = (TextView) findViewById(R.id.textView24);
+        TextView Six = (TextView) findViewById(R.id.textView25);
+        TextView Straight = (TextView) findViewById(R.id.textView26);
+        TextView Pairs = (TextView)findViewById(R.id.textView27);
+        TextView Triplets = (TextView)findViewById(R.id.textView30);
 
         FirstBank.setText("To get on the Score Pad for the first time, you must have a running total of " + sharedPref.getString("FirstBankInput", "500") +  " points before you stop rolling.");
         OneOne.setText("Single 1 = " + sharedPref.getString("OneOneInput","100") );

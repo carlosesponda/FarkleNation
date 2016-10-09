@@ -100,6 +100,8 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
     public void onPause() {
+        int a = activity_input.defaultPointVals[0];
+
         super.onPause();
         SharedPreferences sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         TextView WinTotalInput = (TextView) findViewById(R.id.WinTotalInput);

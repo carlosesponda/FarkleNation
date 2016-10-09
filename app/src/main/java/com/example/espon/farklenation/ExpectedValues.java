@@ -12,7 +12,6 @@ public class ExpectedValues implements Comparable<ExpectedValues> {
         this.expectedValue=expectedValue;
     }
 
-
     @Override
     public int compareTo(ExpectedValues o) {
         return (int)(o.expectedValue-expectedValue);
