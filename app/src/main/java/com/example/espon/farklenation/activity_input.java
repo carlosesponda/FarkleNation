@@ -53,29 +53,35 @@ public class activity_input extends AppCompatActivity {
         Button runButton = (Button) findViewById(R.id.button);
         runButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                String[] nameSettings = {"WinTotal","FirstBankInput","EachBankInput","OneOneInput","OneFiveInput","ThreeOnesInput","ThreeTwosInput","ThreeThreesInput","ThreeFoursInput","ThreeFivesInput","ThreeSixsInput","FourInput", "FiveInput","SixInput","PairsInput","TripletsInput","StraightInput"};
-                String[] pointSettings = new String[nameSettings.length];
+                String[] nameSettings = {
+                    "WinTotal", "FirstBankInput", "EachBankInput", "OneOneInput",
+                    "OneFiveInput", "ThreeOnesInput", "ThreeTwosInput", "ThreeThreesInput",
+                    "ThreeFoursInput", "ThreeFivesInput","ThreeSixsInput", "FourInput", 
+                    "FiveInput", "SixInput", "PairsInput", "TripletsInput",
+                    "StraightInput"
+                };
+                int[] defaultPointVals = { 
+                    10000, 500, 0, 100, 
+                    50, 300, 200, 300, 
+                    400, 500, 600, 1000, 
+                    2000, 3000, 1500, 2500, 
+                    1500 
+                };
+
+                int num_settings = nameSettings.length;
+
+                int[] pointSettings = new int[num_settings];
                 TextView startTotal = (TextView) findViewById(R.id.editText2);
                 TextView currTotal = (TextView) findViewById(R.id.editText);
                 SharedPreferences sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-                pointSettings[0] = sharedPref.getString("WinTotal", "10000");
-                pointSettings[1] = sharedPref.getString("FirstBankInput", "500");
-                pointSettings[2] = sharedPref.getString("EachBankInput", "0");
-                pointSettings[3] = sharedPref.getString("OneOneInput", "100");
-                pointSettings[4] = sharedPref.getString("OneFiveInput", "50");
-                pointSettings[5] = sharedPref.getString("ThreeOnesInput", "300");
-                pointSettings[6] = sharedPref.getString("ThreeTwosInput", "200");
-                pointSettings[7] = sharedPref.getString("ThreeThreesInput", "300");
-                pointSettings[8] = sharedPref.getString("ThreeFoursInput", "400");
-                pointSettings[9] = sharedPref.getString("ThreeFivesInput", "500");
-                pointSettings[10] = sharedPref.getString("ThreeSixsInput", "600");
-                pointSettings[11] = sharedPref.getString("FourInput", "1000");
-                pointSettings[12] = sharedPref.getString("FiveInput", "2000");
-                pointSettings[13] = sharedPref.getString("SixInput", "3000");
-                pointSettings[14] = sharedPref.getString("PairsInput", "1500");
-                pointSettings[15] = sharedPref.getString("TripletsInput", "2500");
-                pointSettings[16] = sharedPref.getString("StraightInput", "1500");
-                int[] dice = {0,0,0,0,0,0};
+
+                for (int i = 0; i < num_settings; ++i) {
+                    pointSettings[i] = Integer.parseInt(
+                        sharedPref.getString(nameSettings[i], Integer.toString(defaultPointVals[i]))
+                        );
+                }
+
+                int[] dice = {0, 0, 0, 0, 0, 0};
                 if(!spinner1.getSelectedItem().toString().equals("N/A")){
                     dice[Integer.parseInt(spinner1.getSelectedItem().toString())-1]++;
                 }
