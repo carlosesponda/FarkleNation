@@ -47,7 +47,7 @@ public class SettingsActivity extends AppCompatActivity {
         ThreeFivesInput.setText(sharedPref.getString(activity_input.nameSettings[9], Integer.toString(activity_input.defaultPointVals[9])));
         ThreeSixsInput.setText(sharedPref.getString(activity_input.nameSettings[10], Integer.toString(activity_input.defaultPointVals[10])));
         FourInput.setText(sharedPref.getString(activity_input.nameSettings[11], Integer.toString(activity_input.defaultPointVals[11])));
-        FiveInput.setText(sharedPref.getString(activity_input.nameSettings[12], Integer.toString(activity_input.defaultPointVals[12]));
+        FiveInput.setText(sharedPref.getString(activity_input.nameSettings[12], Integer.toString(activity_input.defaultPointVals[12])));
         SixInput.setText(sharedPref.getString(activity_input.nameSettings[13], Integer.toString(activity_input.defaultPointVals[13])));
         PairsInput.setText(sharedPref.getString(activity_input.nameSettings[14], Integer.toString(activity_input.defaultPointVals[14])));
         TripletsInput.setText(sharedPref.getString(activity_input.nameSettings[15], Integer.toString(activity_input.defaultPointVals[15])));
@@ -125,7 +125,7 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(activity_input.nameSettings[0], WinTotalInput.getText().toString());
         editor.putString(activity_input.nameSettings[1], FirstBankInput.getText().toString());
-        editor.putString(activity_input.nameSettings[2] EachBankInput.getText().toString());
+        editor.putString(activity_input.nameSettings[2], EachBankInput.getText().toString());
         editor.putString(activity_input.nameSettings[3], OneOneInput.getText().toString());
         editor.putString(activity_input.nameSettings[4], OneFiveInput.getText().toString());
         editor.putString(activity_input.nameSettings[5], ThreeOnesInput.getText().toString());
@@ -141,9 +141,10 @@ public class SettingsActivity extends AppCompatActivity {
         editor.putString(activity_input.nameSettings[15], TripletsInput.getText().toString());
         editor.putString(activity_input.nameSettings[16], StraightInput.getText().toString());
 
-        for (int i = 0; i < num_settings; ++i) {
+        int[] pointSettings = new int[activity_input.NUM_SETTINGS];
+        for (int i = 0; i < activity_input.NUM_SETTINGS; ++i) {
             pointSettings[i] = Integer.parseInt(
-                sharedPref.getString(nameSettings[i], Integer.toString(defaultPointVals[i]))
+                sharedPref.getString(activity_input.nameSettings[i], Integer.toString(activity_input.defaultPointVals[i]))
                 );
         }
 

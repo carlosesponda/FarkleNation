@@ -73,6 +73,7 @@ public class activity_input extends AppCompatActivity {
                 TextView currTotal = (TextView) findViewById(R.id.editText);
                 SharedPreferences sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
+                int[] pointSettings = new int[NUM_SETTINGS];
                 for (int i = 0; i < NUM_SETTINGS; ++i) {
                     pointSettings[i] = Integer.parseInt(
                         sharedPref.getString(nameSettings[i], Integer.toString(defaultPointVals[i]))
