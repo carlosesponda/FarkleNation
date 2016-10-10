@@ -34,23 +34,24 @@ public class SettingsActivity extends AppCompatActivity {
         TextView PairsInput = (TextView) findViewById(R.id.PairsInput);
         TextView TripletsInput = (TextView) findViewById(R.id.TripletsInput);
         TextView StraightInput = (TextView) findViewById(R.id.StraightInput);
-        WinTotalInput.setText(sharedPref.getString("WinTotal", "10000"));
-        FirstBankInput.setText(sharedPref.getString("FirstBankInput", "500"));
-        EachBankInput.setText(sharedPref.getString("EachBankInput", "0"));
-        OneOneInput.setText(sharedPref.getString("OneOneInput", "100"));
-        OneFiveInput.setText(sharedPref.getString("OneFiveInput", "50"));
-        ThreeOnesInput.setText(sharedPref.getString("ThreeOnesInput", "300"));
-        ThreeTwosInput.setText(sharedPref.getString("ThreeTwosInput", "200"));
-        ThreeThreesInput.setText(sharedPref.getString("ThreeThreesInput", "300"));
-        ThreeFoursInput.setText(sharedPref.getString("ThreeFoursInput", "400"));
-        ThreeFivesInput.setText(sharedPref.getString("ThreeFivesInput", "500"));
-        ThreeSixsInput.setText(sharedPref.getString("ThreeSixsInput", "600"));
-        FourInput.setText(sharedPref.getString("FourInput", "1000"));
-        FiveInput.setText(sharedPref.getString("FiveInput", "2000"));
-        SixInput.setText(sharedPref.getString("SixInput", "3000"));
-        PairsInput.setText(sharedPref.getString("PairsInput", "1500"));
-        TripletsInput.setText(sharedPref.getString("TripletsInput", "2500"));
-        StraightInput.setText(sharedPref.getString("StraightInput", "1500"));
+
+        WinTotalInput.setText(sharedPref.getString(activity_input.nameSettings[0], Integer.toString(activity_input.defaultPointVals[0])));
+        FirstBankInput.setText(sharedPref.getString(activity_input.nameSettings[1], Integer.toString(activity_input.defaultPointVals[1])));
+        EachBankInput.setText(sharedPref.getString(activity_input.nameSettings[2], Integer.toString(activity_input.defaultPointVals[2])));
+        OneOneInput.setText(sharedPref.getString(activity_input.nameSettings[3], Integer.toString(activity_input.defaultPointVals[3])));
+        OneFiveInput.setText(sharedPref.getString(activity_input.nameSettings[4], Integer.toString(activity_input.defaultPointVals[4])));
+        ThreeOnesInput.setText(sharedPref.getString(activity_input.nameSettings[5], Integer.toString(activity_input.defaultPointVals[5])));
+        ThreeTwosInput.setText(sharedPref.getString(activity_input.nameSettings[6], Integer.toString(activity_input.defaultPointVals[6])));
+        ThreeThreesInput.setText(sharedPref.getString(activity_input.nameSettings[7], Integer.toString(activity_input.defaultPointVals[7])));
+        ThreeFoursInput.setText(sharedPref.getString(activity_input.nameSettings[8], Integer.toString(activity_input.defaultPointVals[8])));
+        ThreeFivesInput.setText(sharedPref.getString(activity_input.nameSettings[9], Integer.toString(activity_input.defaultPointVals[9])));
+        ThreeSixsInput.setText(sharedPref.getString(activity_input.nameSettings[10], Integer.toString(activity_input.defaultPointVals[10])));
+        FourInput.setText(sharedPref.getString(activity_input.nameSettings[11], Integer.toString(activity_input.defaultPointVals[11])));
+        FiveInput.setText(sharedPref.getString(activity_input.nameSettings[12], Integer.toString(activity_input.defaultPointVals[12]));
+        SixInput.setText(sharedPref.getString(activity_input.nameSettings[13], Integer.toString(activity_input.defaultPointVals[13])));
+        PairsInput.setText(sharedPref.getString(activity_input.nameSettings[14], Integer.toString(activity_input.defaultPointVals[14])));
+        TripletsInput.setText(sharedPref.getString(activity_input.nameSettings[15], Integer.toString(activity_input.defaultPointVals[15])));
+        StraightInput.setText(sharedPref.getString(activity_input.nameSettings[16], Integer.toString(activity_input.defaultPointVals[16])));
 
         final Button button = (Button) findViewById(R.id.resetSpecialButton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -59,9 +60,9 @@ public class SettingsActivity extends AppCompatActivity {
                 TextView WinTotalInput = (TextView) findViewById(R.id.WinTotalInput);
                 TextView FirstBankInput = (TextView) findViewById(R.id.FirstBankInput);
                 TextView EachBankInput = (TextView) findViewById(R.id.EachBankInput);
-                WinTotalInput.setText("10000");
-                FirstBankInput.setText("500");
-                EachBankInput.setText("0");
+                WinTotalInput.setText(Integer.toString(activity_input.defaultPointVals[0]));
+                FirstBankInput.setText(Integer.toString(activity_input.defaultPointVals[1]));
+                EachBankInput.setText(Integer.toString(activity_input.defaultPointVals[2]));
             }
         });
         final Button button2 = (Button) findViewById(R.id.resetSpecialButton2);
@@ -82,20 +83,20 @@ public class SettingsActivity extends AppCompatActivity {
                 TextView PairsInput = (TextView) findViewById(R.id.PairsInput);
                 TextView TripletsInput = (TextView) findViewById(R.id.TripletsInput);
                 TextView StraightInput = (TextView) findViewById(R.id.StraightInput);
-                OneOneInput.setText("100");
-                OneFiveInput.setText("50");
-                ThreeOnesInput.setText("300");
-                ThreeTwosInput.setText("200");
-                ThreeThreesInput.setText("300");
-                ThreeFoursInput.setText("400");
-                ThreeFivesInput.setText("500");
-                ThreeSixsInput.setText("600");
-                FourInput.setText("1000");
-                FiveInput.setText("2000");
-                SixInput.setText("3000");
-                PairsInput.setText("1500");
-                TripletsInput.setText("2500");
-                StraightInput.setText("1500");
+                OneOneInput.setText(Integer.toString(activity_input.defaultPointVals[3]));
+                OneFiveInput.setText(Integer.toString(activity_input.defaultPointVals[4]));
+                ThreeOnesInput.setText(Integer.toString(activity_input.defaultPointVals[5]));
+                ThreeTwosInput.setText(Integer.toString(activity_input.defaultPointVals[6]));
+                ThreeThreesInput.setText(Integer.toString(activity_input.defaultPointVals[7]));
+                ThreeFoursInput.setText(Integer.toString(activity_input.defaultPointVals[8]));
+                ThreeFivesInput.setText(Integer.toString(activity_input.defaultPointVals[9]));
+                ThreeSixsInput.setText(Integer.toString(activity_input.defaultPointVals[10]));
+                FourInput.setText(Integer.toString(activity_input.defaultPointVals[11]));
+                FiveInput.setText(Integer.toString(activity_input.defaultPointVals[12]));
+                SixInput.setText(Integer.toString(activity_input.defaultPointVals[13]));
+                PairsInput.setText(Integer.toString(activity_input.defaultPointVals[14]));
+                TripletsInput.setText(Integer.toString(activity_input.defaultPointVals[15]));
+                StraightInput.setText(Integer.toString(activity_input.defaultPointVals[16]));
             }
         });
     }
@@ -122,42 +123,30 @@ public class SettingsActivity extends AppCompatActivity {
         TextView TripletsInput = (TextView) findViewById(R.id.TripletsInput);
         TextView StraightInput = (TextView) findViewById(R.id.StraightInput);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("WinTotalInput", WinTotalInput.getText().toString());
-        editor.putString("FirstBankInput", FirstBankInput.getText().toString());
-        editor.putString("EachBankInput", EachBankInput.getText().toString());
-        editor.putString("OneOneInput", OneOneInput.getText().toString());
-        editor.putString("OneFiveInput", OneFiveInput.getText().toString());
-        editor.putString("ThreeOnesInput", ThreeOnesInput.getText().toString());
-        editor.putString("ThreeTwosInput", ThreeTwosInput.getText().toString());
-        editor.putString("ThreeThreesInput", ThreeThreesInput.getText().toString());
-        editor.putString("ThreeFoursInput", ThreeFoursInput.getText().toString());
-        editor.putString("ThreeFivesInput", ThreeFivesInput.getText().toString());
-        editor.putString("ThreeSixsInput", ThreeSixsInput.getText().toString());
-        editor.putString("FourInput", FourInput.getText().toString());
-        editor.putString("FiveInput", FiveInput.getText().toString());
-        editor.putString("SixInput", SixInput.getText().toString());
-        editor.putString("PairsInput", PairsInput.getText().toString());
-        editor.putString("TripletsInput", TripletsInput.getText().toString());
-        editor.putString("StraightInput", StraightInput.getText().toString());
-        String[] nameSettings = {"winTotal","bankTotal","eachbankTotal","OneOneInput","OneFiveInput","ThreeOnesInput","ThreeTwosInput","ThreeThreesInput","ThreeFoursInput","ThreeFivesInput","ThreeSixsInput","FourInput", "FiveInput","SixInput","PairsInput","TripletsInput","StraightInput"};
-        String[] pointSettings = new String[nameSettings.length];
-        pointSettings[0] = sharedPref.getString("WinTotal", "10000");
-        pointSettings[1] = sharedPref.getString("FirstBankInput", "500");
-        pointSettings[2] = sharedPref.getString("EachBankInput", "0");
-        pointSettings[3] = sharedPref.getString("OneOneInput", "100");
-        pointSettings[4] = sharedPref.getString("OneFiveInput", "50");
-        pointSettings[5] = sharedPref.getString("ThreeOnesInput", "300");
-        pointSettings[6] = sharedPref.getString("ThreeTwosInput", "200");
-        pointSettings[7] = sharedPref.getString("ThreeThreesInput", "300");
-        pointSettings[8] = sharedPref.getString("ThreeFoursInput", "400");
-        pointSettings[9] = sharedPref.getString("ThreeFivesInput", "500");
-        pointSettings[10] = sharedPref.getString("ThreeSixsInput", "600");
-        pointSettings[11] = sharedPref.getString("FourInput", "1000");
-        pointSettings[12] = sharedPref.getString("FiveInput", "2000");
-        pointSettings[13] = sharedPref.getString("SixInput", "3000");
-        pointSettings[14] = sharedPref.getString("PairsInput", "1500");
-        pointSettings[15] = sharedPref.getString("TripletsInput", "2500");
-        pointSettings[16] = sharedPref.getString("StraightInput", "1500");
+        editor.putString(activity_input.nameSettings[0], WinTotalInput.getText().toString());
+        editor.putString(activity_input.nameSettings[1], FirstBankInput.getText().toString());
+        editor.putString(activity_input.nameSettings[2] EachBankInput.getText().toString());
+        editor.putString(activity_input.nameSettings[3], OneOneInput.getText().toString());
+        editor.putString(activity_input.nameSettings[4], OneFiveInput.getText().toString());
+        editor.putString(activity_input.nameSettings[5], ThreeOnesInput.getText().toString());
+        editor.putString(activity_input.nameSettings[6], ThreeTwosInput.getText().toString());
+        editor.putString(activity_input.nameSettings[7], ThreeThreesInput.getText().toString());
+        editor.putString(activity_input.nameSettings[8], ThreeFoursInput.getText().toString());
+        editor.putString(activity_input.nameSettings[9], ThreeFivesInput.getText().toString());
+        editor.putString(activity_input.nameSettings[10], ThreeSixsInput.getText().toString());
+        editor.putString(activity_input.nameSettings[11], FourInput.getText().toString());
+        editor.putString(activity_input.nameSettings[12], FiveInput.getText().toString());
+        editor.putString(activity_input.nameSettings[13], SixInput.getText().toString());
+        editor.putString(activity_input.nameSettings[14], PairsInput.getText().toString());
+        editor.putString(activity_input.nameSettings[15], TripletsInput.getText().toString());
+        editor.putString(activity_input.nameSettings[16], StraightInput.getText().toString());
+
+        for (int i = 0; i < num_settings; ++i) {
+            pointSettings[i] = Integer.parseInt(
+                sharedPref.getString(nameSettings[i], Integer.toString(defaultPointVals[i]))
+                );
+        }
+
         //Farkle.getTable(nameSettings, pointSettings);
         editor.commit();
 

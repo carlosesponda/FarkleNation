@@ -29,6 +29,8 @@ public class activity_input extends AppCompatActivity {
         1500 
     };
 
+    public final static int NUM_SETTINGS = nameSettings.length;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,15 +69,11 @@ public class activity_input extends AppCompatActivity {
         Button runButton = (Button) findViewById(R.id.button);
         runButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                
-                int num_settings = nameSettings.length;
-
-                int[] pointSettings = new int[num_settings];
                 TextView startTotal = (TextView) findViewById(R.id.editText2);
                 TextView currTotal = (TextView) findViewById(R.id.editText);
                 SharedPreferences sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
-                for (int i = 0; i < num_settings; ++i) {
+                for (int i = 0; i < NUM_SETTINGS; ++i) {
                     pointSettings[i] = Integer.parseInt(
                         sharedPref.getString(nameSettings[i], Integer.toString(defaultPointVals[i]))
                         );
